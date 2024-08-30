@@ -9,7 +9,9 @@
 
 ### To build the container images
 ```
-for app in node python; do docker build -t sctp-ce6-mod3.5:"$app" "$app"; done
+for app in node python; do
+    docker build -t sctp-ce6-mod3.5:"$app" "$app"
+done
 ```
 
 ### To run the container
@@ -44,12 +46,16 @@ rm test.sh
 
 ### To stop and remove the running containers
 ```
-docker rm $(docker ps | grep "sctp-ce6-mod3.5" | awk '{print $1}') --force
+docker rm $(docker ps | \
+            grep "sctp-ce6-mod3.5" | \
+            awk '{print $1}') --force
 ```
 
 ### To tag container images before pushing to ECR
 ```
-for app in node python; do docker tag sctp-ce6-mod3.5:"$app" public.ecr.aws/u2q1a2y8/tsanghan-ce6/sctp-ce6-mod3.5:"$app"; done
+for app in node python; do
+    docker tag sctp-ce6-mod3.5:"$app" public.ecr.aws/u2q1a2y8/tsanghan-ce6/sctp-ce6-mod3.5:"$app"
+done
 ```
 ### Create ECR Public container repository with AWS CLI or Tofu/Terraform
 ```
@@ -63,5 +69,7 @@ aws ecr-public get-login-password --region us-east-1 | docker login --username A
 ```
 ### Pushing Container images to ECR Public repository with `Docker` command.
 ```
-for app in node python; do docker push public.ecr.aws/u2q1a2y8/tsanghan-ce6/sctp-ce6-mod3.5:"$app"; done
+for app in node python; do
+    docker push public.ecr.aws/u2q1a2y8/tsanghan-ce6/sctp-ce6-mod3.5:"$app"
+done
 ```
