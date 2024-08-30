@@ -54,7 +54,8 @@ docker rm $(docker ps | \
 ### To tag container images before pushing to ECR
 ```
 for app in node python; do
-    docker tag sctp-ce6-mod3.5:"$app" public.ecr.aws/u2q1a2y8/tsanghan-ce6/sctp-ce6-mod3.5:"$app"
+    docker tag sctp-ce6-mod3.5:"$app" \
+               public.ecr.aws/u2q1a2y8/tsanghan-ce6/sctp-ce6-mod3.5:"$app"
 done
 ```
 ### Create ECR Public container repository with AWS CLI or Tofu/Terraform
