@@ -59,13 +59,16 @@ done
 ```
 ### Create ECR Public container repository with AWS CLI or Tofu/Terraform
 ```
-aws ecr-public create-repository --repository-name tsanghan-ce6/sctp-ce6-mod3.5 --region us-east-1
+aws ecr-public create-repository \
+    --repository-name tsanghan-ce6/sctp-ce6-mod3.5 \
+    --region us-east-1
 ```
 ***Alternatively, we can use Tofu/Terrafom to create ECR Public container repository, please see main.tf file.***
 
 ### Login to AWS ECR Public repository with `AWS CLI` & `Docker` command.
 ```
-aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/u2q1a2y8
+aws ecr-public get-login-password --region us-east-1 | \
+    docker login --username AWS --password-stdin public.ecr.aws/u2q1a2y8
 ```
 ### Pushing Container images to ECR Public repository with `Docker` command.
 ```
