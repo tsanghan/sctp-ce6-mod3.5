@@ -61,7 +61,7 @@ aws ecr-public create-repository --repository-name tsanghan-ce6/sctp-ce6-mod3.5 
 ```
 aws ecr-public get-login-password --region us-east-1 | docker login --username AWS --password-stdin public.ecr.aws/u2q1a2y8
 ```
-### Pushing Container images to RCR Public repository with `Docker` command.
+### Pushing Container images to ECR Public repository with `Docker` command.
 ```
 for app in node python; do docker push public.ecr.aws/u2q1a2y8/tsanghan-ce6/sctp-ce6-mod3.5:"$app"; done
 ```
