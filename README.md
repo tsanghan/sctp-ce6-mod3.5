@@ -5,7 +5,7 @@
 4. Please read [node/Dockerfile](node/Dockerfile) and [python/Dockerfile](python/Dockerfile) for details.
 5. Creation of ECR Public repository with `AWS CLI`.
 6. Login to AWS ECR Public repository with `AWS CLI` & `Docker` command.
-6. Pushing Container images to RCR Public repository with `Docker` command.
+6. Pushing Container images to ECR Public repository with `Docker` command.
 
 ### To build the container images
 ```
